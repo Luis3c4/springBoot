@@ -6,6 +6,24 @@
     <title th:text="${titulo}"></title>
 </head>
 <body>
-    <h1>Practicando Spring Boot</h1>
+    <h1 th:text ="${titulo}"></h1>
+    <ul>
+        <li th:text = "${EmpleadoModel.getNombre}"></li>
+    </ul>
+    <h1>lista de empleados</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="empleado: ${Empleados}">
+                <td th:text="${empleado.nombre}"></td>
+                <td th:text="${empleado.apellido}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
